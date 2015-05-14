@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: cocoy 
+  description: Stride CI for Debian/Ubuntu/RedHat/CentOS.
+  license: "GPLv2"
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty 
+  categories:
+    - web
+#dependencies: 
+#  - Stouts.mongodb
+#  - Stouts.nodejs

@@ -1,0 +1,26 @@
+---
+- group: name=strider state=present
+
+- name: Create user strider 
+  sudo: yes
+  user: name=strider comment="strider" group=strider groups=sudo home=/home/strider createhome=yes  state=present
+
+- apt: name={{item}} state=present 
+  with_items: 
+     - git 
+     - python-virtualenv
+     - python-dev 
+     - git 
+     - g++ 
+     - make 
+
+- file: path=/home/strider/.npm state=absent
+
+# install strider 
+- npm: name=strider state=present  global=yes
+  sudo: yes 
+
+#- npm: name=strider state=present  global=no path=/home/strider/node_modules
+#  sudo_user: strider
+
+
