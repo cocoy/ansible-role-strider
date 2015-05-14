@@ -14,13 +14,10 @@
      - g++ 
      - make 
 
-- file: path=/home/strider/.npm state=absent
-
 # install strider 
-- npm: name=strider state=present  global=yes
-  sudo: yes 
+#- npm: name=strider state=present  global=yes
+#  sudo: yes 
 
-#- npm: name=strider state=present  global=no path=/home/strider/node_modules
-#  sudo_user: strider
-
+- shell: "npm install --global=yes  --unsafe-perm strider"
+  sudo: yes
 
