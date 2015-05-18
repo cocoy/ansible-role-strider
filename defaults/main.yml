@@ -1,0 +1,12 @@
+---
+
+strider_dburi: "localhost:27107"
+strider_mailhost: ""
+strider_mailport: ""
+strider_mailuser: ""
+strider_mailpass: "" 
+strider_servername: "localhost:4000" 
+strider_bitbucket_key: ""
+strider_bitbucket_secret: ""
+strider_github_id: ""
+strider_github_secret: ""

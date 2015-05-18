@@ -14,10 +14,11 @@
      - g++ 
      - make 
 
-# install strider 
-#- npm: name=strider state=present  global=yes
-#  sudo: yes 
-
+## has error when pure npm install :( 
 - shell: "npm install --global=yes  --unsafe-perm strider"
+  sudo: yes
+
+# install strider init file
+- template: src=strider.conf.j2 dest=/etc/init/strider.conf
   sudo: yes
 
