@@ -21,4 +21,3 @@
 # install strider init file
 - template: src=strider.conf.j2 dest=/etc/init/strider.conf
   sudo: yes
-

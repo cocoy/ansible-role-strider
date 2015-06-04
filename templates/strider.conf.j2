@@ -1,0 +1,35 @@
+#!upstart
+description "Strider upstart job"
+
+start on startup
+stop on shutdown
+
+script
+ export PORT=4000
+ #export DB_URI="{{ strider_dburi }}"  # NOT REQUIRED IF RUNNING ON LOCALHOST
+ #export SERVER_NAME="{{ strider_servername }}" #[IF NOT http://localhost:3000]
+ export SMTP_HOST="{{ strider_mailhost }}"
+ export SMTP_PORT="{{ strider_mailport }}"
+ export SMTP_USER="{{ strider_mailuser}}"
+ export SMTP_PASS="{{ strider_mailpass }}"
+ export STRIDER_CLONE_DEST="/home/strider/builds/"
+ export PLUGIN_BITBUCKET_APP_KEY="{{strider_bitbucket_key}}"
+ export PLUGIN_BITBUCKET_APP_SECRET="{{strider_bitbucket_secret}}"
+ export PLUGIN_GITHUB_APP_ID="{{strider_github_id}}"
+ export PLUGIN_GITHUB_APP_SECRET="{{strider_github_secret}}"
+ echo $$ > /var/run/strider.pid
+ 
+# #exec sudo -u strider \
+ #DB_UIR=$DB_URI \
+ #SERVER_NAME=$SERVER_NAME \
+ PLUGIN_GITHUB_APP_ID=$PLUGIN_GITHUB_APP_ID \
+ PLUGIN_GITHUB_APP_SECRET=$PLUGIN_GITHUB_APP_SECRET \
+ PLUGIN_BITBUCKET_APP_KEY=$PLUGIN_BITBUCKET_APP_KEY \
+ PLUGIN_BITBUCKET_APP_SECRET=$PLUGIN_BITBUCKET_APP_SECRET \
+ PLUGIN_BITBUCKET_HOSTNAME=$SERVER_NAME \
+ SMTP_HOST=$SMTP_HOST SMTP_PORT=$SMTP_PORT \
+ SMTP_USER=$SMTP_USER SMTP_PASS=$SMTP_PASS PORT=$PORT STRIDER_CLONE_DEST=$STRIDER_CLONE_DEST \
+ /usr/bin/strider >> /var/log/strider.log 2>&1
+end script
+
+
