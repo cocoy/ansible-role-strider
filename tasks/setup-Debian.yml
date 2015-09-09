@@ -21,3 +21,10 @@
 # install strider init file
 - template: src=strider.conf.j2 dest=/etc/init/strider.conf
   sudo: yes
+
+## make strider the owner of /var/run/strider.pid 
+- file: path=/var/run/strider.pid owner=strider group=strider
+
+
+## make strider the owner of /var/run/strider.pid 
+- file: path=/var/log/strider.log owner=strider group=strider
