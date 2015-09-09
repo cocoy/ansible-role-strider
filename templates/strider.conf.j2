@@ -4,6 +4,8 @@ description "Strider upstart job"
 start on startup
 stop on shutdown
 
+setgid strider 
+setuid strider
 script
  export PORT=4000
  #export DB_URI="{{ strider_dburi }}"  # NOT REQUIRED IF RUNNING ON LOCALHOST
