@@ -22,8 +22,11 @@
 - template: src=strider.conf.j2 dest=/etc/init/strider.conf
   sudo: yes
 
+# create pid file
+- file: path=/var/run/strider.pid owner=strider group=strider state=touch
+
 ## make strider the owner of /var/run/strider.pid 
-- file: path=/var/run/strider.pid owner=strider group=strider
+- file: path=/var/run/strider.pid owner=strider group=strider state=touch
 
 
 ## make strider the owner of /var/run/strider.pid 
