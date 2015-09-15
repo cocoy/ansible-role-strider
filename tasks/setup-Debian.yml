@@ -35,3 +35,4 @@
 - shell: strider addUser -l {{strider_username}} -p {{strider_password}} -a {{strider_isadmin}} 
   sudo: yes
 
+- service: name=strider state=started 
