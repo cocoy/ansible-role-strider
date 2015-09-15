@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: cocoy 
-  description: Stride CI for Debian/Ubuntu/RedHat/CentOS.
+  description: Stride CI for Debian/Ubuntu
   license: "GPLv2"
   min_ansible_version: 1.6
   platforms:
