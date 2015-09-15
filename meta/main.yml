@@ -10,6 +10,6 @@ galaxy_info:
     - trusty 
   categories:
     - web
-#dependencies: 
-#  - Stouts.mongodb
-#  - Stouts.nodejs
+dependencies: 
+  - Stouts.mongodb
+  - Stouts.nodejs
