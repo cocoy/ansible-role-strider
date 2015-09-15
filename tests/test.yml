@@ -1,0 +1,23 @@
+- hosts: all 
+  user: ubuntu 
+  sudo: True
+
+  vars:
+    mongodb_conf_smallfiles: no
+    mongodb_conf_bind_ip: 0.0.0.0
+    nodejs_npm_modules:
+      - bower
+      - jshint  
+      #- strider
+
+  pre_tasks: 
+    - apt: name={{item}} state=present force=yes 
+      with_items:
+        - build-essential
+        - git
+
+  roles:
+    -  Stouts.mongodb
+    -  Stouts.nodejs
+    -  ansible-role-strider
+
