@@ -30,7 +30,7 @@
 
 
 ## make strider the owner of /var/run/strider.pid 
-- file: path=/var/log/strider.log owner=strider group=strider
+- file: path=/var/log/strider.log owner=strider group=strider state=touch
 
 - shell: strider addUser -l {{strider_username}} -p {{strider_password}} -a {{strider_isadmin}} 
   sudo: yes
