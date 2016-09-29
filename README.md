@@ -9,7 +9,7 @@ http://stridercd.com/
 
 ### Installation
 
-This role requires at least Ansible `v1.7.0`. To install it, run:
+This role requires at least Ansible `v2.0.x`. To install it, run:
 
     ansible-galaxy install cocoy.strider
 
