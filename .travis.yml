@@ -14,8 +14,9 @@ install:
   - pip install ansible
 
   # Fix roles_path
-  - "printf '[defaults]\nroles_path=../\n' > ./ansible.cfg"
-  #- cp tests/ansible.cfg ./
+  #- "printf '[defaults]\nroles_path=../' > ./ansible.cfg" 
+  - cp tests/ansible.cfg ./
+  - "printf 'roles_path=../\n' >> ./ansible.cfg"
 
 script:
   # Check Syntax
