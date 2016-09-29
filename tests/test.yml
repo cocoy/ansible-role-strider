@@ -1,5 +1,5 @@
-- hosts: all 
-  user: ubuntu 
+- hosts: localhost 
+  remote_user: root 
   sudo: True
 
   vars:
