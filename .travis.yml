@@ -6,12 +6,15 @@ python: "2.7"
 before_install:
   - sudo apt-get update -qq
 
+env: 
+  ANSIBLE_CONFIG=./ansible.cfg 
+ 
 install:
   # Install Ansible
   - pip install ansible
 
   # Fix roles_path
-  - "printf '[defaults]\nroles_path=../' > ansible.cfg"
+  - "printf '[defaults]\nroles_path=../\n' > ./ansible.cfg"
   #- cp tests/ansible.cfg ./
 
 script:
