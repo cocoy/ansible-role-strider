@@ -1,6 +1,6 @@
 - hosts: localhost 
   remote_user: root 
-  sudo: True
+  become: yes
 
   vars:
     mongodb_conf_smallfiles: no
