@@ -18,7 +18,6 @@ install:
   #- "printf '[defaults]\nroles_path=../' > ./ansible.cfg" 
   - cp tests/ansible.cfg ./
   - "printf 'roles_path=../\n' >> ./ansible.cfg"
-  - "printf 'host_key_checking = False\n' >> ./ansible.cfg"
 
   
 
