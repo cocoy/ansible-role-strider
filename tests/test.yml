@@ -20,5 +20,5 @@
   roles:
     -  Stouts.mongodb
     -  Stouts.nodejs
-    -  ansible-role-strider
+    #-  ansible-role-strider
 
